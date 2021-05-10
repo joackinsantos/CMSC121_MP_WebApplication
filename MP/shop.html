@@ -10,9 +10,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/9b38664ec5.js" crossorigin="anonymous"></script>
-        <link href="css/profile.css" rel="stylesheet">
+        <link href="css/shop.css" rel="stylesheet">
 
-        <title>Planter | Home</title>
+        <title>Planter | Shop</title>
         <link rel="icon" href="img/icon.ico">
 
     </head>
@@ -34,10 +34,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="home.html"><i class="fas fa-home"></i>HOME</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="shop.html"><i class="fas fa-shopping-bag"></i>SHOP</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="profile.html"><i class="fas fa-user-alt"></i>PROFILE</a>
                         </li>
                         <li class="nav-item">
@@ -50,22 +50,167 @@
             </div>
         </nav>
 
+        <!--Side Panel-->
         <div class="container">
             <nav class="navbar-left navbar-expand-md navbar-light">
-                <img src="img/testavatar.jpg" alt="Avatar" class="avatar">
-                <a href="profile.html">Profile</a>
-                <a href="#">Preference</a>
-                <a href="#">History</a>
-                <a href="shop.html">Shop</a>
-                <a href="cart.html">Cart</a>
-                <a href="home.html">Sign-out</a>
+                <div id="nav-container">
+                    <div class="input-group mb-3 input-group-sm col-xs-2">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="submit">
+                                <img src="img/searchbtn.png" width="17" img="17">
+                            </button>
+                        </div>
+                    </div>
+
+                    <p>Categories</p>
+                    <ul>
+                        <li class="active"><a href="#">Plants</a></li>
+                        <li><a href="#">Seeds</a></li>
+                        <li><a href="#">Succulents</a></li>
+                        <li><a href="#">Pots</a></li>
+                        <li><a href="#">Garden Tools</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+
+                    <p>Sort By</p>
+                    <ul>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Bestseller
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Newest
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Price - low to high
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Price - high to low
+                            </label>
+                        </div>
+                    </ul> 
+                </div>  
             </nav>
         </div>
 
         <main>
-            this is main
-        </main>
-        
+             <!--Product Section-->
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
 
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/products/prod 1.jpg" alt="Product 1">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="text-dark stretched-link" style="position: static;">Alocasia</a>
+                                        <button class="btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+                                    </h4>
+                                    <hr>
+                                    <h6 class="card-text">
+                                        ₱ 1,290
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/products/prod 2.jpg" alt="Product 2">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="text-dark stretched-link" style="position: static;">Anthurium</a>
+                                        <button class="btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+                                    </h4>
+                                    <hr>
+                                    <h6 class="card-text">
+                                        ₱ 3,290
+                                    </h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/products/prod 3.jpg" alt="Product 3">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="text-dark stretched-link" style="position: static;">Azalea</a>
+                                        <button class="btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+                                    </h4>
+                                    <hr>
+                                    <h6 class="card-text">
+                                        ₱ 790
+                                    </h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/products/prod 4.jpg" alt="Product 4">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="text-dark stretched-link" style="position: static;">Begunia</a>
+                                        <button class="btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+                                    </h4>
+                                    <hr>
+                                    <h6 class="card-text">
+                                        ₱ 3,590
+                                    </h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/products/prod 5.jpg" alt="Product 5">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="text-dark stretched-link" style="position: static;">Cactus</a>
+                                        <button class="btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+                                    </h4>
+                                    <hr>
+                                    <h6 class="card-text">
+                                        ₱ 1,190
+                                    </h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="img/products/prod 6.jpg" alt="Product 6">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="text-dark stretched-link" style="position: static;">Vizneva Set</a>
+                                        <button class="btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+                                    </h4>
+                                    <hr>
+                                    <h6 class="card-text">
+                                        ₱ 4,590
+                                    </h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </main>
     </body>
 </html>
