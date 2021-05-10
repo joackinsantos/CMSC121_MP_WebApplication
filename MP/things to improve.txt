@@ -1,0 +1,31 @@
+Improvements:
+Home Design
+  -image quality
+  -complete *insert* lines
+  -spacing
+  -design
+
+Profile design
+  -dynamic sized
+  -better use of space (parang empty kasi)
+  -css
+
+Shop design
+  -needs search box
+  -needs filter (sort by category, etc. pero frontend lang so no functionality)
+  -show individual product(img (clickable going to product page), name of product, price, btn add to cart)
+
+Cart design
+  -show added items
+  -must see item img, name, price, amount
+  -buy now button sa ilalim
+
+Need:
+profile.html
+shop.html
+cart.html
+
+Optional
+sign-up/login.html
+product.html
+preference.html
