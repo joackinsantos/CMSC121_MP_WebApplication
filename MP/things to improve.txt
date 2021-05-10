@@ -1,0 +1,15 @@
+Improvements:
+Home design
+  -image quality
+  -*insert* lines
+  -spacing
+  -design
+
+Need:
+profile.html
+shop.html
+cart.html
+
+Optional:
+sign-up/login.html
+product.html
