@@ -1,0 +1,10 @@
+<h1>Register</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="Create User">
+</form>
+
+<!--Handles errors in account creation input-->
+{{form.errors}}
