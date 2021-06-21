@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+.html, body{
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+/* NAVBAR CSS */
+.navbar{
+  background-color: #D1E2C4;
+  padding: .5rem;
+  top:10;
+  filter: drop-
+  shadow(0px 3px 5px #31352E);
+}
+.navbar-brand{
+  margin-left: 20px;
+}
+.navbar-nav li{
+  padding-right: 14px;
+}
+#nav-link-each-active{
+  position: relative;
+  color: #31352E;
+}
+#nav-item #nav-link-each, #dropdown #navbarDropdown{
+  position: relative;
+  color: #636e5a;
+}
+#nav-item #nav-link-each:hover,#nav-item #nav-link-each-active:hover, #dropdown:hover #navbarDropdown{
+  top: -3px;
+  color: #31352E;
+}
+.nav-link{
+  padding: 17px 14px;
+  font-size: 1.4em !important;
+}
+.navbar-toggler{
+  margin-right: 20px;
+}
+.navbar-collapse{
+  margin-right: 20px;
+  padding-left: 40px;
+}
+
+/* ICONS */
+.fa-store-alt{
+  padding-right: 0.6rem;
+}
+.fa-store{
+  padding-right: 0.7rem;
+}
+.fa-user-circle{
+  padding-right: 0.2rem;
+}
+.fa-user-alt{
+  color: #31352E;
+  margin-left: 2px;
+  padding-right: 0.6rem;
+}
+.fa-user-edit{
+  color: #31352E;
+  margin-left: 2px;
+  padding-right: 0.36rem;
+}
+.fa-history{
+  color: #31352E;
+  margin-left: 1.5px;
+  padding-right: 0.66rem;
+}
+.fa-shopping-cart{
+  color: #31352E;
+  margin-left: 0.7px;
+  padding-right: 0.53rem;
+}
+.fa-sign-out-alt{
+  color: #31352E;
+  margin-left: 4.6px;
+  padding-right: 0.41rem;
+}
+
+
+/* DROPDOWN (ACCOUNT) */
+#dropdown{
+  float: left;
+}
+#dropdown #navbarDropdown{
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-menu{
+  font-size: 18px;
+  display: none;
+  position: absolute;
+  background-color: #f5f5f5;
+  min-width: 190px;
+  box-shadow: 0px 2px 4px 0px #333;
+}
+.dropdown-menu a{
+  float: none;
+  color:#31352E;
+  padding: 14px 18px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-menu a:hover{
+  background-color: #ddd;
+}
+#dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
