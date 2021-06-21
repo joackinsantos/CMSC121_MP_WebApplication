@@ -23,3 +23,9 @@ def registerPage(request):
 def loginPage(request):
     context = {}
     return render(request, 'planter/login.html', context)
+    
+def shop(request):
+    return render(request, "planter/shop.html")
+
+def account(request):
+    return render(request, "planter/account.html")
