@@ -8,7 +8,6 @@ from django.contrib import messages
 from . forms import CreateUserForm
 
 
-
 #--HOME PAGE VIEW--
 def home(request):
     return render(request, "planter/home.html")
@@ -54,9 +53,20 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
+#--CART VIEW--
+def cart(request):
+     context = {}
+     return render(request, 'planter/cart.html', context)
+
+#--CHECKOUT VIEW--
+def checkout(request):
+      context = {}
+      return render(request, 'planter/checkout.html', context)
+
 #--SHOP VIEW--
 def shop(request):
-    return render(request, "planter/shop.html")
+    context = {}
+    return render(request, "planter/shop.html", context)
 
 #--ACCOUNT VIEW--
 def account(request):
