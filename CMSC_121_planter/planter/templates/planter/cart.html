@@ -1,1 +1,23 @@
+{% extends 'planter/main.html' %}
+{% load static %}
+
+{% block content %}
+
 <h1>Cart</h1>
+
+<!--TEMPORARY CART LAYOUT-->
+{% for item in items %}
+    <div><img src="{{item.product.imageURL}}"></div>
+    <p>{{item.product.name}}</p>
+    <p>P {{item.product.price|floatformat:2}}</p>
+    <p>Quantity: {{item.quantity}}</p>
+    <button data-product="{{item.product.id}}" data-action="add" class="update-cart">Add Item</button>
+    <button data-product="{{item.product.id}}" data-action="remove" class="update-cart">Remove Item</button>
+    <p>Item Total: P {{item.get_total}}</p>
+{% endfor %}
+
+<h3>Quantity of Items: {{order.get_cart_items}}</h3>
+<h3>Cart Total: {{order.get_cart_total|floatformat:2}}</h3>
+<a href="{% url 'checkout' %}"><button>Checkout</button></a>
+
+{% endblock content %}
