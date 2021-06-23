@@ -1,0 +1,101 @@
+/* login container */
+
+body{
+    background-color: #f4f4f4;
+}
+
+/* NAVBAR */
+.fa-arrow-left{
+    color: #31352E;
+    margin-left: 2px;
+    padding-right: 0.36rem;
+}
+
+/* LOGIN CONTAINER */
+.container-divider{
+    height: 130px;
+    background-color: transparent;
+}
+#login-cc{
+    width:100%;
+    height:800px;
+    background-color: transparent;
+}
+.padding{
+    padding-bottom: 1.7rem;
+}
+.padding2{
+    padding-bottom: 0.6rem;
+}
+.padding-login{
+    padding-top: 3.7rem;
+    padding-bottom: 0.6rem;
+}
+#login-container{
+    display:block;
+    align-self: center;
+    background-color: #D1E2C4;
+    text-align: center;
+    filter: drop-shadow(0px 1px 2px #31352E);
+    height: 100%;
+}
+#login-container h1{
+    padding-top: 90px;
+    padding-bottom: 80px;
+    font-size: 35px;
+    font-weight: 550;
+}
+#login-container .row{
+    padding-left: 28%;
+    padding-right: 28%;
+}
+#login-container input{
+    padding-top: 8.5px;
+    padding-bottom: 8.5px;
+    font-size: 18px;
+}
+#login-btn{
+    position: relative;
+    padding-top:100px;
+    background-color: #708238;
+    color:white;
+}
+#login-btn:hover{
+    top:-3px;
+    background-color: #000000;
+}
+#register-btn{
+    position: relative;
+    background-color: #31352E;
+    color:white;
+    font-size: 18px;
+}
+#register-btn:hover{
+    top:-3px;
+    background-color: #000000;
+}
+
+/* Separator CSS */
+#login-container .row-sep{
+    padding-left: 28.5%;
+    padding-right: 28.5%;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.separator::before,
+.separator::after {
+  content: '   ';
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+.separator:not(:empty)::before {
+  margin-right: 0.9em;
+}
+.separator:not(:empty)::after {
+  margin-left: 0.9em;
+}
+
+
