@@ -32,4 +32,14 @@
     </div>
 </nav>
 
+<!--TEMPORARY PRODUCTS-->
+<div>
+    {% for product in products %}
+        <img src="{{product.imageURL}}">
+        <h5>{{product.name}}</h5>
+        <h6>P {{product.price|floatformat:2}}</h6>
+        <button data-product="{{product.id}}" data-action="add" class="update-cart">Add to Cart</button>
+    {% endfor %}
+</div>
+
 {% endblock content%}

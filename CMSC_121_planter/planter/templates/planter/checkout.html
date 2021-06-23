@@ -1,0 +1,140 @@
+{% extends 'planter/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Checkout</h1>
+
+<!--TEMPORARY CHECKOUT LAYOUT-->
+<form id="form">
+	<div id="user-info">
+		<div class="form-field">
+			<input required class="form-control" type="text" name="name" placeholder="Name..">
+		</div>
+		<div class="form-field">
+			<input required class="form-control" type="email" name="email" placeholder="Email..">
+		</div>
+	</div>
+	
+	<div id="shipping-info">
+		<hr>
+		<p>Shipping Information:</p>
+		<hr>
+		<div class="form-field">
+			<input class="form-control" type="text" name="address" placeholder="Address..">
+		</div>
+		<div class="form-field">
+			<input class="form-control" type="text" name="city" placeholder="City..">
+		</div>
+		<div class="form-field">
+			<input class="form-control" type="text" name="state" placeholder="State..">
+		</div>
+		<div class="form-field">
+			<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+		</div>
+	</div>
+	<hr>
+	<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue" style="display: block;">
+</form>
+<br>
+<div class="box-element hidden" id="payment-info" style="display: none;">
+	<h2>Payment Options</h2>
+    <button id="make-payment">Make Payment</button>
+</div>
+<br>
+
+<h3>Order Summary</h3>
+<p>Items: {{order.get_cart_items}}</p>
+<p>Total: P {{order.get_cart_total|floatformat:2}}</p>
+
+{% for item in items %}
+    <div></div><img src="{{item.product.imageURL}}"></div>
+    <p>{{item.product.name}}</p>
+    <p>{{item.product.price|floatformat:2}}</p>
+    <p>{{item.quantity}}</p>
+    <p>Item Total: P {{item.get_total}}</p>
+{% endfor %}
+
+<script type="text/javascript" >
+
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total}}'
+
+    //--Handler to hide 'continue' button and reveals 'payment options' in checkout.html
+    var form = document.getElementById('form')
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        console.log('Form Submitted')
+        //document.getElementById('form-button').classList.add("hidden")
+        //document.getElementById('payment-info').classList.remove("hidden")
+        document.getElementById('form-button').style.display = "none";
+        document.getElementById('payment-info').style.display = "block";
+    })
+
+    //--Hides 'Name' and 'Email' fields when a logged in user goes to checkout page 
+    if (user != 'AnonymousUser'){
+		 	document.getElementById('user-info').innerHTML = ''
+    }
+
+    //--Handler for Make Payment button in checkout.html
+    document.getElementById('make-payment').addEventListener('click', function(e){
+        submitFormData()
+    })
+
+    function submitFormData(){
+        console.log('Payment button clicked')
+
+        //--For checkout form data
+        var userFormData = {
+				'name':null,
+				'email':null,
+				'total':total,
+		}
+
+        var shippingInfo = {
+				'address':null,
+				'city':null,
+				'state':null,
+                'zipcode':null,
+		}
+
+        if (shipping != 'False'){
+	    		shippingInfo.address = form.address.value
+		    	shippingInfo.city = form.city.value
+		    	shippingInfo.state = form.state.value
+		    	shippingInfo.zipcode = form.zipcode.value
+	    }
+
+        /*--Allows anonymous user to checkout; might not be needed hence commented out 
+        if (user == 'AnonymousUser'){
+	    		userFormData.name = form.name.value
+	    		userFormData.email = form.email.value
+	    }
+        */
+
+        console.log('Shipping Info:', shippingInfo)
+	    console.log('User Info:', userFormData)
+
+        var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'application/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+	    		
+	    	})
+	    	.then((response) => response.json())
+	    	.then((data) => {
+				  console.log('Success:', data);
+				  alert('Transaction completed');  
+				  window.location.href = "{% url 'home' %}"
+
+			})
+    }
+
+    
+</script>
+
+{% endblock content %}

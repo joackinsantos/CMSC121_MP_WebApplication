@@ -6,25 +6,23 @@
 
 <!-- NAVIGATION BAR -->
 <nav class="navbar navbar-expand-md navbar-light sticky-top">
-    <div class="container-fluid" id="navbar">
+    <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="{% url 'home'%}"><img src={% static 'planter/images/logo3.png' %} width="200"></a>
+        <a class="navbar-brand" href="{% url 'home'%}"><img src={% static 'planter/images/logo.png' %} width="180"></a>
 
         <!-- Toggler -->
-        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-controls="navbarResponsive">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-controls="navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navigation Links-->
-        <div class="collapse navbar-collapse ms-auto" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <!-- Home -->
-                <li class="nav-item active" id="nav-item">
-                    <a class="nav-link" id="nav-link-each-active" href="{% url 'home'%}"><i class="fas fa-store-alt"></i>HOME</a>
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home'%}"><i class="fas fa-home"></i>HOME</a>
                 </li>
-                <!-- Shop -->
-                <li class="nav-item" id="nav-item">
-                    <a class="nav-link" id="nav-link-each" href="{% url 'shop'%}"><i class="fas fa-store"></i>SHOP</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'shop'%}"><i class="fas fa-shopping-bag"></i>SHOP</a>
                 </li>
                 <!-- Account -->
                 <li class="nav-item dropdown" id="dropdown">
