@@ -33,6 +33,11 @@
 </nav>
 
 <!--TEMPORARY PRODUCTS-->
+<form>
+    <input name="q" type="text" placeholder="Search">
+    <button type="submit">Search Mofo</button>
+</form>
+
 <div>
     {% for product in products %}
         <img src="{{product.imageURL}}">
