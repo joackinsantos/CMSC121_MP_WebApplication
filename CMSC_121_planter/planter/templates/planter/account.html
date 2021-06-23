@@ -35,17 +35,20 @@
 <!--TEMPORARY ACCOUNT LAYOUT-->
 <h1>ACCOUNT INFO</h1>
 
-<h4>Username:</h4>
-<h6>{{ request.user.username }}</h6>
+{% for message in messages %}
+    <h2>{{message}}</h2>
+{% endfor %}
 
 <h4>First Name:</h4>
-<h6>{{ request.user.first_name }}</h6>
+<h6>{{ request.user.customer.first_name }}</h6>
 
 <h4>Last Name:</h4>
-<h6>{{ request.user.last_name }}</h6>
+<h6>{{ request.user.customer.last_name }}</h6>
 
 <h4>Email:</h4>
-<h6>{{ request.user.email }}</h6>
+<h6>{{ request.user.customer.email }}</h6>
+
+<a href="{% url 'account_update' %}"><button>Update Profile</button></a>
 
 
 {% endblock content%}

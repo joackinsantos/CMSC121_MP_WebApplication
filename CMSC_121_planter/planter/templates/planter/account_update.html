@@ -38,6 +38,6 @@
 <form method="POST" action="">
     {% csrf_token %}
     {{form.as_p}}
+    <button type="submit">Update</button>
 </form>
-<input type="submit" name="update information">
 {% endblock content%}

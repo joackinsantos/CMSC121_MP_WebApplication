@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.urls import reverse_lazy
 from .models import *
 import json
 import datetime
@@ -172,6 +173,8 @@ def accountUpdate(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Profile succesfully updated!')
+            return HttpResponseRedirect(reverse_lazy('account'))
 
     context = {'form':form}
     return render(request, "planter/account_update.html", context)
