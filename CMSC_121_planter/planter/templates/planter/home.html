@@ -6,25 +6,23 @@
 
 <!-- NAVIGATION BAR -->
 <nav class="navbar navbar-expand-md navbar-light sticky-top">
-    <div class="container-fluid" id="navbar">
+    <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="{% url 'home'%}"><img src={% static 'planter/images/logo3.png' %} width="200"></a>
+        <a class="navbar-brand" href="{% url 'home'%}"><img src={% static 'planter/images/logo.png' %} width="180"></a>
 
         <!-- Toggler -->
-        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-controls="navbarResponsive">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-controls="navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navigation Links-->
-        <div class="collapse navbar-collapse ms-auto" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <!-- Home -->
-                <li class="nav-item active" id="nav-item">
-                    <a class="nav-link" id="nav-link-each-active" href="{% url 'home'%}"><i class="fas fa-store-alt"></i>HOME</a>
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home'%}"><i class="fas fa-home"></i>HOME</a>
                 </li>
-                <!-- Shop -->
-                <li class="nav-item" id="nav-item">
-                    <a class="nav-link" id="nav-link-each" href="{% url 'shop'%}"><i class="fas fa-store"></i>SHOP</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'shop'%}"><i class="fas fa-shopping-bag"></i>SHOP</a>
                 </li>
                 <!-- Account -->
                 <li class="nav-item dropdown" id="dropdown">
@@ -37,24 +35,24 @@
                             <i class="fas fa-user-alt"></i>
                             Your Profile
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{% url 'account' %}">
                             <i class="fas fa-user-edit"></i>
                             Edit Profile
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <!-- <a class="dropdown-item" href="{% url 'account' %}">
                             <i class="fas fa-history"></i>
                             Purchase History
-                        </a>
-                        <a class="dropdown-item" href="#">
+                        </a> -->
+                        <a class="dropdown-item" href="{% url 'account' %}">
                             <i class="fas fa-shopping-cart"></i>
                             Shopping Cart
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{% url 'login' %}">
                             <i class="fas fa-sign-in-alt"></i>
                             Log In
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{% url 'register' %}">
                             <i class="fas fa-user-plus"></i>
                             Sign Up
                         </a>
@@ -75,19 +73,19 @@
     <!-- Carousel Items -->
     <div class="carousel-inner">
         <!-- Item 1 -->
-        <div class="carousel-item">
+        <div class="carousel-item active">
             <img class="d-block w-100" src={% static 'planter/images/home.png' %} alt="First">
             <div class="carousel-caption">
                 <h1 class="display-2">
                     Planter
                 </h1>
                 <h3>for all your planting needs!</h3>
-                <a href="#" type="button" id="start-btn" class="btn btn-lg">Start Planting Now</a>
-                <a href="#" type="button" id="browse-btn" class="btn btn-lg">Browse Our Shop</a>
+                <a href="{% url 'register' %}" type="button" id="start-btn" class="btn btn-lg">Start Planting Now</a>
+                <a href="{% url 'shop'%}" type="button" id="browse-btn" class="btn btn-lg">Browse Our Shop</a>
             </div>
         </div>
         <!-- Item 2 -->
-        <div class="carousel-item active">
+        <div class="carousel-item">
             <img class="d-block w-100" src={% static 'planter/images/pot.png' %} alt="Second">
             <div class="carousel-caption" id="carousel-caption-2">
                 <h1 class="display-2">
@@ -143,7 +141,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Plants</h4>
                     <p class="card-text">Guaranteed to spruce up your garden, from seasonal specialties to everyday favorites offered to satisfy the Planter in you.</p>
-                    <a href="#" class="btn btn-outline-secondary">View More</a>
+                    <a href="{% url 'shop'%}" class="btn btn-outline-secondary">View More</a>
                 </div>
             </div>
         </div>
@@ -155,7 +153,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Care & Tools</h4>
                     <p class="card-text"> Make sure your garden is in tip top shape and your plants are vibrant and healthy with the help of our plant care tools and accesories. </p>
-                    <a href="#" class="btn btn-outline-secondary">View More</a>
+                    <a href="{% url 'shop'%}" class="btn btn-outline-secondary">View More</a>
                 </div>
             </div>
         </div>
@@ -167,7 +165,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Pots</h4>
                     <p class="card-text">Add character to your humble garden and plants with our collection of pots that will surely cater to your garden's look.</p>
-                    <a href="#" class="btn btn-outline-secondary">View More</a>
+                    <a href="{% url 'shop'%}" class="btn btn-outline-secondary">View More</a>
                 </div>
             </div>
         </div>
@@ -227,9 +225,9 @@
             <div class="col-md-4"  id="navigation">
                 <h5>Navigation Links</h5>
                 <hr class="light">
+                <p><a class="nav-linker" href="#">Back to Top</a></p>
                 <p><a class="nav-linker" href="#minishop_hr">Back to Minishop</a></p>
                 <p><a class="nav-linker" href="#welcome_hr">Back to Goals</a></p>
-                <p><a class="nav-linker" href="#">Back to Top</a></p>
             </div>
             <!-- Socket -->
             <div class="col-12">
