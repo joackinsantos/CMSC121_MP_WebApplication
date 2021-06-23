@@ -11,18 +11,18 @@
         <a class="navbar-brand" href="{% url 'home'%}"><img src={% static 'planter/images/logo.png' %} width="180"></a>
 
         <!-- Toggler -->
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-controls="navbarResponsive">
+        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-controls="navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navigation -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto" id="nav-item">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home'%}"><i class="fas fa-home"></i>HOME</a>
+                    <a class="nav-link" id="nav-link-each-active" href="{% url 'home'%}"><i class="fas fa-store-alt"></i>HOME</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'shop'%}"><i class="fas fa-shopping-bag"></i>SHOP</a>
+                <li class="nav-item" >
+                    <a class="nav-link" id="nav-link-each" href="{% url 'shop'%}"><i class="fas fa-store"></i>SHOP</a>
                 </li>
                 <!-- Account -->
                 <li class="nav-item dropdown" id="dropdown">
@@ -222,7 +222,7 @@
                 <p>09999999999</p>
                 <p>planter@gmail.com</p>
             </div>
-            <div class="col-md-4"  id="navigation">
+            <div class="col-md-4 navigation"  >
                 <h5>Navigation Links</h5>
                 <hr class="light">
                 <p><a class="nav-linker" href="#">Back to Top</a></p>
