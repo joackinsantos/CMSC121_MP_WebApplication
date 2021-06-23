@@ -5,16 +5,18 @@ from django.contrib.auth.models import User
 #--CUSTOMER MODEL--
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank= True)
-    name = models.CharField(max_length=200, null=True)
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.user) 
 
 #--PRODUCT MODEL--
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
+    description = models.TextField(null=True, blank=True)
     digital = models.BooleanField(default=False, null=True, blank=False)
     image = models.ImageField(null=True, blank=True)
 

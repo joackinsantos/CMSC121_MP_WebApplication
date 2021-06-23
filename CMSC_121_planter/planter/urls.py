@@ -11,6 +11,7 @@ urlpatterns = [
     path('login/', views.loginPage, name="login"),
     path('logout/', views.logoutUser, name="logout"),
     path('account/', views.account, name="account"),
+    path('account_update/', views.accountUpdate, name="account_update"),
     path(r'^favicon\.ico$', RedirectView.as_view(url=r'static/planter/images/icons/favicon.ico')),
     path('shop/', views.shop, name="shop"),
     path('cart/', views.cart, name="cart"),

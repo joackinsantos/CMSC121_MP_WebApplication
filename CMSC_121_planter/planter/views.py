@@ -9,7 +9,7 @@ import datetime
 
 #from django.contrib.auth.decorators import login_required
 
-from . forms import CreateUserForm
+from . forms import CreateUserForm, CustomerForm
 
 #--HOME PAGE VIEW--
 def home(request):
@@ -22,11 +22,10 @@ def registerPage(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Welcome to Planter, ' + user + '!')
-
-            sendEmail(request)
+            user = form.save()
+            username = form.cleaned_data.get('username')
+ 
+            messages.success(request, 'Welcome to Planter, ' + username + '!')
             return redirect('login')
 
     context = {'form':form}
@@ -153,11 +152,26 @@ def processOrder(request):
 			state=data['shipping']['state'],
 			zipcode=data['shipping']['zipcode'],
 		)
-        else:
-            print('User is not logged in')
+
+    else:
+         print('User is not logged in')
 
     return JsonResponse('Payment Completed!', safe=False)
     
 #--ACCOUNT VIEW--
 def account(request):
     return render(request, "planter/account.html")
+
+#--ACCOUNT UPDATE VIEW--
+def accountUpdate(request):
+    customer = request.user.customer
+    form = CustomerForm(instance=customer)
+
+    if request.method == 'POST':
+        form = CustomerForm(request.POST, instance=customer)
+
+        if form.is_valid():
+            form.save()
+
+    context = {'form':form}
+    return render(request, "planter/account_update.html", context)
