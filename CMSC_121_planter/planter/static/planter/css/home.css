@@ -1,77 +1,357 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
+@font-face {
+  font-family: 'Berlin Sans FB Demi Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Berlin Sans FB Demi Bold'), url('BRLNSDB.woff') format('woff');
+}
+
+/* CAROUSEL */
 .carousel-inner img{
-    margin: auto;
-    width: 100%;
-    height: 100%;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.carousel-caption{
+  margin: auto;
+  position:absolute;
+  top: 53%;
+  transform: translateY(-60%);
+  text-align:right;
+  text-shadow: 5px 10px 10px #31352E;
+}
+.carousel-caption h1{
+  font-family: "Berlin Sans FB Demi Bold", sans-serif;
+  font-size: 650%;
+}
+.carousel-caption h3{
+  font-size: 200%;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+#carousel-caption-2{
+  margin: auto;
+  position:absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  color: #31352E;
+  text-align:left;
+}
+#carousel-caption-2 h1{
+  font-family: "Berlin Sans FB Demi Bold", sans-serif;
+  font-size: 650%;
+  text-shadow: none;
+}
+#carousel-caption-2 h3{
+  font-size: 200%;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  text-shadow: none;
+}
+#carousel-caption-3{
+  margin: auto;
+  position:absolute;
+  top: 53%;
+  transform: translateY(-60%);
+  color: #31352E;
+  text-align:right;
+}
+#carousel-caption-3 h1{
+  font-family: "Berlin Sans FB Demi Bold", sans-serif;
+  font-size: 650%;
+  text-shadow: none;
+}
+#carousel-caption-3 h3{
+  font-size: 200%;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  text-shadow: none;
+}
+.carousel-control-prev:hover{
+  background-color: rgba(220,220,220, 0.3);
+}
+.carousel-control-next:hover{
+  background-color: rgba(220,220,220, 0.3);
+}
+.btn{
+  font-size: 125%;
+  position:relative;
+  color: white;
+  font-weight: 200;
+  background-color: #708238;
+  border: 1px solid #677933;
+  filter: drop-shadow(0px 3px 5px #31352E);
+}
+.btn:hover{
+  top: -3px;
+  background-color: rgba(112,130,56, 0.8);
+  color: white;
+}
+#start-btn{
+  padding: 8px 18px;
+}
+#browse-btn{
+  padding: 8px 16px;
+}
+#offer-btn{
+  padding: 8px 22px;
+}
+#sign-up-btn{
+  padding: 8px 40px;
+}
+
+/* MINISHOP */
+.display-4{
+  position:relative;
+  font-family: "Berlin Sans FB Demi Bold", "sans serif";
+  font-size: 75px;
+  top:20px;
+}
+.card-title{
+  font-family: "Berlin Sans FB Demi Bold", "sans serif";
+  font-size: 30px;
+}
+.card-text{
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#minishop_hr{
+  padding-bottom:3rem;
+  color: white;
+}
+#minishop_title{
+  padding-bottom:1.5rem;
+}
+
+/* WELCOME */
+.card{
+  width: 100%;
+  height: 100%;
+}
+#welcome p{
+  font-size: 35px;
+}
+#welcome_items p{
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.fa-seedling, .fa-leaf, .fa-globe-asia{
+  color: #708238;
+  font-size: 4em;
+  margin: 1rem;
+}
+#welcome_hr{
+  padding-bottom:3rem;
+  color: white;
+}
+
+/* FOOTER */
+footer{
+  background-color: #D1E2C4;
+  filter: drop-shadow(0px 3px 5px #31352E);
+  padding-top: 2rem;
+}
+footer div{
+  color:#31352E;
+  font-size: 20px;
+}
+footer h5{
+  font-weight: bold;
+}
+hr.light{
+  border-top: 1px solid black;
+  width: 80%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+hr.light-100{
+  border-top: 1px solid black;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+.footer-logo{
+  width: 60%;
+  height:auto;
+}
+#logo-text{
+  font-weight:bold;
+}
+#navigation a{
+  text-decoration: none;
+}
+#navigation a:link{
+  color: #6b4112;
+}
+#navigation a:hover{
+  color: #995d19;
+}
+
+/*---Media Queries --*/
+@media (max-width: 1500px) {
+  .btn{
+    font-size: 110%;
   }
   .carousel-caption{
     margin: auto;
-    position:absolute;
     top: 50%;
-    transform: translateY(-40%);
   }
   .carousel-caption h1{
-    font-size: 500%;
-    text-shadow: 3px 3px 15px #000;
+    font-size: 575%
   }
   .carousel-caption h3{
-    font-size: 200%;
-    font-weight: 500;
-    text-shadow: 1px 1px 10px #000;
-    padding-bottom: 1rem;
-  }
-  .btn-primary{
-    background-color: #008000;
-    border: 1px solid #008000;
-  }
-  .btn-primary:hover{
-    background-color: #006400;
-    border: 1px solid #006400;
+    font-size: 170%
   }
 
-/*---Firefox Bug Fix --*/
-.carousel-item {
-    transition: -webkit-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
+  #carousel-caption-2{
+    margin: auto;
+    top: 48%;
   }
-  /*--- Fixed Background Image --*/
-  figure {
-    position: relative;
-    width: 100%;
-    height: 60%;
-    margin: 0!important;
+  #carousel-caption-2 h1{
+    font-size: 575%
   }
-  .fixed-wrap {
-    clip: rect(0, auto, auto, 0);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  #carousel-caption-2 h3{
+    font-size: 170%
   }
-  #fixed {
-    background-image: url('img/mac.png');
-    position: fixed;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    will-change: transform;
+
+
+  #carousel-caption-3{
+    margin: auto;
+    top: 50%;
   }
-  /*--- Bootstrap Padding Fix --*/
-  [class*="col-"] {
-      padding: 1rem;
+  #carousel-caption-3 h1{
+    font-size: 575%
   }
-  
+  #carousel-caption-3 h3{
+    font-size: 170%
+  }
+}
+@media (max-width: 1350px) {
+  .carousel-caption{
+    margin: auto;
+    top: 48%;
+  }
+  .carousel-caption h1{
+    font-size: 500%
+  }
+  .carousel-caption h3{
+    font-size: 140%
+  }
+
+  #carousel-caption-2{
+    margin: auto;
+    top: 45%;
+  }
+  #carousel-caption-2 h1{
+    font-size: 500%
+  }
+  #carousel-caption-2 h3{
+    font-size: 140%
+  }
+
+
+  #carousel-caption-3{
+    margin: auto;
+    top: 48%;
+  }
+  #carousel-caption-3 h1{
+    font-size: 500%
+  }
+  #carousel-caption-3 h3{
+    font-size: 140%
+  }
+}
+@media (max-width: 1080px) {
+  .carousel-caption{
+    margin: auto;
+    top: 49%;
+  }
+  .carousel-caption h1{
+    font-size: 490%
+  }
+  .carousel-caption h3{
+    display: none;
+  }
+
+  #carousel-caption-2{
+    margin: auto;
+    top: 48%;
+  }
+  #carousel-caption-2 h1{
+    font-size: 490%
+  }
+  #carousel-caption-2 h3{
+    display: none;
+  }
+
+
+  #carousel-caption-3{
+    margin: auto;
+    top: 49%;
+  }
+  #carousel-caption-3 h1{
+    font-size: 490%
+  }
+  #carousel-caption-3 h3{
+    display: none;
+  }
+
+  .display-4{
+    font-size: 55px;
+  }
+  #welcome p{
+    font-size: 25px;
+  }
+}
+@media (max-width: 875px) {
+  .carousel-caption{
+    margin: auto;
+    top: 47%;
+  }
+
+  #carousel-caption-2{
+    margin: auto;
+    top: 46%;
+  }
+
+  #carousel-caption-3{
+    margin: auto;
+    top: 47%;
+  }
+
+  #start-btn{
+    padding: 6px 16px;
+  }
+  #browse-btn{
+    padding: 6px 14px;
+  }
+  #offer-btn{
+    padding: 6px 20px;
+  }
+  #sign-up-btn{
+    padding: 6px 38px;
+  }
+}
+@media (max-width: 750px) {
+  .carousel-caption{
+    margin: auto;
+    top: 42%;
+  }
+
+  #carousel-caption-2{
+    margin: auto;
+    top: 41%;
+  }
+
+  #carousel-caption-3{
+    margin: auto;
+    top: 42%;
+  }
+}
   
   
   
